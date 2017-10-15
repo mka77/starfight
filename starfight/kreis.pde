@@ -32,6 +32,8 @@ class Kreis {
      ellipse(0,0,r,r);
      stroke(204, 102, 0);
      line(0,0,0,-90) ;
+     line(-80,0,80,0) ;
+    line(-80,20,-80,-20) ;
 
      
      // ellipse(x,y,r,r);
