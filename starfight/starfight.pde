@@ -8,7 +8,7 @@ void setup() {
 } 
  
 void draw() {
-   background(0);
+   background(10);
    scheibe.update();
    scheibe.paint();
 }  
