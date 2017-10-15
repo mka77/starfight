@@ -22,23 +22,33 @@ class Kreis {
    } 
  
    void paint() {
-      // noStroke();   
-      fill(c);
-     translate(x,y);
      
+    pushMatrix();  
+     noStroke();   
+//      fill(c);
+     translate(x,y);
+
+      fill(color(60,100,100));
+
     // rotate(-atan2(x-mouseX, y-mouseY)-HALF_PI);
-    rotate(-atan2(x-mouseX, y-mouseY));
-
+    rotate(-0.6*atan2(x-mouseX, y-mouseY));
+    //Koerper
      ellipse(0,0,r,r);
-     stroke(204, 102, 0);
-     line(0,0,0,-90) ;
-     line(-80,0,80,0) ;
-    line(-80,20,-80,-20) ;
-
+     // stroke(204, 102, 0);
+    
+     // Flügelverbindung
+     rect(-70,5,140,3) ;
+   // Flügel
+    rect(-75,-60,10,120) ;
+    rect(65,-60,10,120) ;
+    // Kanonen
+  fill(color(30,100,100));
+     rect(-30,-40,3,50) ;
+     rect(27,-40,3,50) ;
      
      // ellipse(x,y,r,r);
      // line(x,y,x+cos(radians(richtung))*20,y+sin(radians(richtung))*20) ;
-      
+    popMatrix();  
    }
  
    void update() {
