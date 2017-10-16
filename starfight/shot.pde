@@ -32,6 +32,10 @@ class Shot {
       x += tempo*dx;
       y += tempo*dy; */ 
      //  richtung = richtung +1;  
+     if (mousePressed == true) {
+      x = 50;
+      y= 500;
+      richtung = 270; }
  }
      
 }
