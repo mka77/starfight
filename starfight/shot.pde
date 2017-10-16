@@ -2,14 +2,14 @@
 class Shot {
    
    float x, y;       // ort
-   float richtung;
-   int l;            // sein Radius
+   float richtung;   //in radians
+   float speed;            // sein Radius
    
-    Shot(float startx, float starty, float startrichtung) {            // das ist der Konstruktor
+    Shot(float startx, float starty, float startrichtung, float startspeed) {            // das ist der Konstruktor
       x = startx;
       y = starty;
       richtung = startrichtung;
-      // c = color(60,100,100);
+      speed = startspeed;
    } 
    
      void paint() {
@@ -23,19 +23,14 @@ class Shot {
      
      void update() {
       
-      float speed;
-      speed = 3;
       x = x + speed * cos(richtung);
       y = y + speed * sin(richtung);
-       /* float dx = mouseX-x;
-      float dy = mouseY-y;
-      x += tempo*dx;
-      y += tempo*dy; */ 
-     //  richtung = richtung +1;  
-     if (mousePressed == true) {
-      x = 50;
-      y= 500;
-      richtung = 270; }
+      
+      if (mousePressed == true) {
+        x = fighter.x;
+        y= fighter.y;
+        richtung = fighter.richtung - radians(90); 
+      }
  }
      
 }

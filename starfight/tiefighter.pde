@@ -3,7 +3,7 @@
 class Tiefighter {
    
    float x, y;       // Mittelpunkt des Fighters
-   float richtung;
+   float richtung;  //in radians
    int r;            // sein Radius
    color c;          // seine Farbe
    float tempo;      // easing-Variable
@@ -18,7 +18,7 @@ class Tiefighter {
       c = color(60,100,100);
       tempo = random(0.01,0.1);
       r = radius;
-      richtung = 270;
+      richtung = radians(270);
    } 
  
    void paint() {
@@ -31,7 +31,7 @@ class Tiefighter {
       fill(color(60,100,100));
 
     // rotate(-atan2(x-mouseX, y-mouseY)-HALF_PI);
-    rotate(-0.6*atan2(x-mouseX, y-mouseY));
+    rotate(richtung);
     //Koerper
      ellipse(0,0,r,r);
      // stroke(204, 102, 0);
@@ -52,7 +52,9 @@ class Tiefighter {
    }
  
    void update() {
-      /* float dx = mouseX-x;
+     richtung = -0.6*atan2(x-mouseX, y-mouseY); 
+     
+     /* float dx = mouseX-x;
       float dy = mouseY-y;
       x += tempo*dx;
       y += tempo*dy; */ 
