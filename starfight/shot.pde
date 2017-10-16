@@ -25,11 +25,12 @@ class Shot {
       
       x = x + speed * cos(richtung);
       y = y + speed * sin(richtung);
-      
+      speed = speed *1.05;
       if (mousePressed == true) {
         x = fighter.x;
         y= fighter.y;
         richtung = fighter.richtung - radians(90); 
+        speed = 3;
       }
  }
      
