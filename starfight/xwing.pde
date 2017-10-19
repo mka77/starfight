@@ -14,18 +14,26 @@ class Xwing {
     } 
    
      void paint() {
+       pushMatrix();
        noStroke();  
-       fill(color(30,60,100));
+       if (wasHit == false ) { fill(color(30,60,100)); } else {fill(color(170,10,10)); }
        
        translate(x,y);
        rotate(richtung);
-       rect(0,0,50,50) ;
+       rect(-10,-10,20,20) ;
+       popMatrix();
      }
      
      void update() {
+      if (wasHit == false) {
+        x = x + speed * cos(richtung);
+        y = y + speed * sin(richtung);
+      }
+      if ( dist(x,y,schuss.x,schuss.y) < 20 ) {
+        wasHit = true;
+      }
       
-      x = x + speed * cos(richtung);
-      y = y + speed * sin(richtung);
+      
   }
      
 }
