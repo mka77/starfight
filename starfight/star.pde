@@ -9,12 +9,26 @@ class Star {
   }
   
  void update() {
-   x = x+1;
+   y = y+2;
+   if ( y > height ) {
+     y = 0;
+     x = random(0,width);
+   }
+   
  }
   
  void paint() {
+   pushMatrix();
+
+   color(100,100,100,100);
+   fill(0);
    stroke(100,100,100);
-   line(x,y,x,y);
+   // line(x,y,x+5,y+5);
+   
+   ellipse(x,y,2,2);
+   
+   
+      popMatrix();
  }
  
 }
