@@ -1,13 +1,16 @@
 
 
 Tiefighter fighter;            
-Shot schuss[] = new Shot[2] ;
+Shot schuss[] = new Shot[10] ;
 Xwing enemy;
 Star stars[] = new Star[20];
+int shotsonway;
    
 void setup() {
    size(600,600);
    fighter = new Tiefighter(40);
+   
+   shotsonway = 0;
    
    for (int i=0; i < schuss.length; i++) {
      boolean isleft;
@@ -19,14 +22,10 @@ void setup() {
    
    enemy = new Xwing(width/2,10,radians(40),3);
    
-   //stars[1] = new Star(20,10);
-   // stars[0] = new Star(30,10);
    for (int i=0; i < stars.length; i++) {
     stars[i] = new Star(random(0,width), random(0,height));
   }
    
-   
-   // stars[1] = new Star(width*3/4,10);
 } 
  
 void draw() {

@@ -33,8 +33,10 @@ class Shot {
       y = y + speed * sin(richtung);
       speed = speed *1.05;
      
-      if  ( (mousePressed == true) & ( onItsWay == false) ) {
-        onItsWay = true;
+     // if  ( (mousePressed == true) & ( onItsWay == false) ) {
+     //   onItsWay = true;
+    if  ( (mousePressed == true) & ( shotsonway < 10) ) {
+      shotsonway = shotsonway + 1;
         
         if (isleftcannon) { 
           x = fighter.x - sin(fighter.richtung) * 30  ;
@@ -50,8 +52,9 @@ class Shot {
         speed = 3;
       }
  
-     if ( (x < 0) | (x > height ) )  {
-       onItsWay = false;
+     if ( (x < 0) | (x > height ) | ( y < 0 ) )  {
+       // onItsWay = false;
+       shotsonway = shotsonway - 1; 
      }
  }
      
