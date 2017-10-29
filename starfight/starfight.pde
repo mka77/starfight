@@ -8,8 +8,8 @@ Star stars[] = new Star[20];
 void setup() {
    size(600,600);
    fighter = new Tiefighter(40);
-   schuss = new Shot(0,0,radians(300),3);
-   enemy = new Xwing(width/3,10,radians(40),3);
+   schuss = new Shot(0,0,radians(270),3);
+   enemy = new Xwing(width/2,10,radians(40),3);
    //stars[1] = new Star(20,10);
    // stars[0] = new Star(30,10);
    for (int i=0; i < stars.length; i++) {
