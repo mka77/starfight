@@ -13,10 +13,9 @@ void setup() {
    shotcounter = 0;
    
    for (int i=0; i < schuss.length; i++) {
-     boolean isleft;
-     if ( (i % 2) == 0) { isleft = true;} else {isleft = false; }
+    
           
-     schuss[i] = new Shot(-10,0,radians(270),3,isleft);
+     schuss[i] = new Shot(-10,0,radians(270),3);
      
    }
    
@@ -56,11 +55,20 @@ void draw() {
 
 void mouseClicked() {
   // Shot Management
+  float xoffset, yoffset;
   shotcounter = shotcounter + 1;
-  if ( shotcounter > ( schuss.length - 1) ) { shotcounter = 0; }    
+  if ( shotcounter > ( schuss.length - 1) ) { shotcounter = 0; }
+
+  if ( (shotcounter % 2) == 0) {
+     xoffset = 30 * sin(fighter.richtung - radians(90) ) ;
+     yoffset = - 30 * cos(fighter.richtung - radians(90) );
+  } else {
+     xoffset = +30;
+     yoffset = 0;
+  }
        
-       schuss[shotcounter].x = fighter.x;
-       schuss[shotcounter].y = fighter.y;
+       schuss[shotcounter].x = fighter.x + xoffset;
+       schuss[shotcounter].y = fighter.y + yoffset;
        schuss[shotcounter].speed = 3;
        schuss[shotcounter].richtung = fighter.richtung - radians(90);
        
