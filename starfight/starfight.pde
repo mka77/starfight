@@ -4,13 +4,13 @@ Tiefighter fighter;
 Shot schuss[] = new Shot[10] ;
 Xwing enemy;
 Star stars[] = new Star[20];
-int shotsonway;
+int shotcounter;
    
 void setup() {
    size(600,600);
    fighter = new Tiefighter(40);
    
-   shotsonway = 0;
+   shotcounter = 0;
    
    for (int i=0; i < schuss.length; i++) {
      boolean isleft;
@@ -51,7 +51,19 @@ void draw() {
   
    enemy.update();
    enemy.paint();
+     
+}
+
+void mouseClicked() {
+  // Shot Management
+  shotcounter = shotcounter + 1;
+  if ( shotcounter > ( schuss.length - 1) ) { shotcounter = 0; }    
+       
+       schuss[shotcounter].x = fighter.x;
+       schuss[shotcounter].y = fighter.y;
+       schuss[shotcounter].speed = 3;
+       schuss[shotcounter].richtung = fighter.richtung - radians(90);
+       
    
-   
-   
-}  
+      
+}

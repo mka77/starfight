@@ -35,7 +35,7 @@ class Shot {
      
      // if  ( (mousePressed == true) & ( onItsWay == false) ) {
      //   onItsWay = true;
-    if  ( (mousePressed == true) & ( shotsonway < 10) ) {
+    /* if  ( (mousePressed == true) & ( shotsonway < 10) ) {
       shotsonway = shotsonway + 1;
         
         if (isleftcannon) { 
@@ -55,7 +55,7 @@ class Shot {
      if ( (x < 0) | (x > height ) | ( y < 0 ) )  {
        // onItsWay = false;
        shotsonway = shotsonway - 1; 
-     }
+     } */
  }
      
 }
