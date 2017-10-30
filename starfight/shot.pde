@@ -5,15 +5,14 @@ class Shot {
    float richtung;   //in radians
    float speed;           
    boolean onItsWay;
-  boolean isleftcannon;
    
-    Shot(float startx, float starty, float startrichtung, float startspeed, boolean leftcannon) {            // das ist der Konstruktor
+    Shot(float startx, float starty, float startrichtung, float startspeed) {            // das ist der Konstruktor
       x = startx;
       y = starty;
       richtung = startrichtung;
       speed = startspeed;
       onItsWay = false;
-      isleftcannon = leftcannon;
+    
    } 
    
      void paint() {
@@ -35,7 +34,7 @@ class Shot {
      
      // if  ( (mousePressed == true) & ( onItsWay == false) ) {
      //   onItsWay = true;
-    if  ( (mousePressed == true) & ( shotsonway < 10) ) {
+    /* if  ( (mousePressed == true) & ( shotsonway < 10) ) {
       shotsonway = shotsonway + 1;
         
         if (isleftcannon) { 
@@ -55,7 +54,7 @@ class Shot {
      if ( (x < 0) | (x > height ) | ( y < 0 ) )  {
        // onItsWay = false;
        shotsonway = shotsonway - 1; 
-     }
+     } */
  }
      
 }

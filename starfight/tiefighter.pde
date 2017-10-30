@@ -52,12 +52,10 @@ class Tiefighter {
    }
  
    void update() {
-     richtung = -0.6*atan2(x-mouseX, y-mouseY); 
      
-     /* float dx = mouseX-x;
-      float dy = mouseY-y;
-      x += tempo*dx;
-      y += tempo*dy; */ 
-     // richtung = richtung +1;  
+     richtung = -0.6*atan2(x-mouseX, y-mouseY); 
+  
+
+   }
  }
-}  
+ 
