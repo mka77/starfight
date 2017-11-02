@@ -22,9 +22,12 @@ class Xwing {
        translate(x,y);
        rotate(richtung);
        
-       // rect(0,0,4,20) ;
+//       rect(-10,-10,20,3);
        
-       rect(-10,-10,20,3);
+       quad(0,-5, -5,-10, 5,-10, 0,0);
+       quad(0, 5, -5, 10, 5, 10, 0,0);
+       
+       quad(-6,-2, 10,-1, 10,1, -6,2);
        
        popMatrix();
      }
