@@ -1,16 +1,22 @@
 
-
+PFont monoFont;
 Tiefighter fighter;            
 Shot schuss[] = new Shot[10] ;
 Xwing enemy;
 Star stars[] = new Star[20];
 int shotcounter;
+int hitcounter;
    
 void setup() {
    size(600,600);
+   
+   monoFont = loadFont("Monospaced.plain-24.vlw");
+  textFont(monoFont);
+   
    fighter = new Tiefighter(40);
    
    shotcounter = 0;
+   hitcounter = 0;
    
    for (int i=0; i < schuss.length; i++) {
     
@@ -51,6 +57,7 @@ void draw() {
    enemy.update();
    enemy.paint();
      
+   text(hitcounter,10,40);
 }
 
 void mouseClicked() {
@@ -63,8 +70,8 @@ void mouseClicked() {
      xoffset = 30 * sin(fighter.richtung - radians(90) ) ;
      yoffset = - 30 * cos(fighter.richtung - radians(90) );
   } else {
-     xoffset = +30;
-     yoffset = 0;
+     xoffset = - 30 * sin(fighter.richtung - radians(90) ) ;
+     yoffset =   30 * cos(fighter.richtung - radians(90) );
   }
        
        schuss[shotcounter].x = fighter.x + xoffset;
