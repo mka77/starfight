@@ -17,17 +17,27 @@ class Xwing {
      void paint() {
        pushMatrix();
        noStroke();  
-       if (wasHit == false ) { fill(color(30,60,100)); } else {fill(color(170,10,10)); }
-       
        translate(x,y);
        rotate(richtung);
        
-//       rect(-10,-10,20,3);
-       //Flügel
-       quad(0,-5, -5,-10, 5,-10, 0,0);
-       quad(0, 5, -5, 10, 5, 10, 0,0);
+       if (wasHit == false ) { 
+         fill(color(30,60,100)); 
+             //Flügel
+       quad(0,-5, -5,-15, 5,-15, 0,0);
+       quad(0, 5, -5, 15, 5, 15, 0,0);
        // Rumpf
-       quad(-6,-2, 15,-1, 15,1, -6,2);
+       quad(-6,-2, 25,-1, 25,1, -6,2);
+       
+     
+       } 
+         else {
+         fill(color(170,10,10)); 
+         ellipse(0,0,10,10);
+         fill(color(170,30,30));
+         ellipse(0,0,5,5);
+     }
+       
+       
        
        popMatrix();
      }
@@ -43,7 +53,7 @@ class Xwing {
       }
       
       for (int i=0; i < schuss.length; i++) {
-        if ( dist(x,y,schuss[i].x,schuss[i].y) < 20 ) {
+        if ( dist(x,y,schuss[i].x,schuss[i].y) < 30 ) {
           wasHit = true;
           hitcounter = hitcounter +1;
           schuss[i].x = -100;
