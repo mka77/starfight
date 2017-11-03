@@ -1,14 +1,14 @@
 
 PFont monoFont;
 Tiefighter fighter;            
-Shot schuss[] = new Shot[10] ;
-Xwing enemy[] = new Xwing[5];
+Shot schuss[] = new Shot[20] ;
+Xwing enemy[] = new Xwing[4];
 Star stars[] = new Star[20];
 int shotcounter;
 int hitcounter;
    
 void setup() {
-   size(600,600);
+   size(1000,800);
    
    monoFont = loadFont("Monospaced.plain-24.vlw");
    textFont(monoFont);

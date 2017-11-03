@@ -23,20 +23,21 @@ class Xwing {
        rotate(richtung);
        
 //       rect(-10,-10,20,3);
-       
+       //Flügel
        quad(0,-5, -5,-10, 5,-10, 0,0);
        quad(0, 5, -5, 10, 5, 10, 0,0);
-       
-       quad(-6,-2, 10,-1, 10,1, -6,2);
+       // Rumpf
+       quad(-6,-2, 15,-1, 15,1, -6,2);
        
        popMatrix();
      }
      
      void update() {
+       int aenderung= 5;
       if (wasHit == false) {
         x = x + speed * cos(richtung);
         y = y + speed * sin(richtung);
-        richtung = richtung  + random(radians(-10),radians(10));
+        richtung = richtung  + random(radians(-aenderung),radians(aenderung));
         counti = 0;       
         
       }

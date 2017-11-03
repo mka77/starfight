@@ -28,6 +28,9 @@ class Tiefighter {
 //      fill(c);
      translate(x,y);
 
+  fill(color(50,50,50));
+     ellipse(0,0,200,200);
+
       fill(color(60,100,100));
 
     // rotate(-atan2(x-mouseX, y-mouseY)-HALF_PI);
@@ -48,6 +51,9 @@ class Tiefighter {
      
      // ellipse(x,y,r,r);
      // line(x,y,x+cos(radians(richtung))*20,y+sin(radians(richtung))*20) ;
+     
+     
+     
     popMatrix();  
    }
  
@@ -55,6 +61,14 @@ class Tiefighter {
      
      richtung = -0.6*atan2(x-mouseX, y-mouseY); 
   
+    for (int i=0; i < enemy.length; i++) {
+        if ( dist(x,y,enemy[i].x,enemy[i].y) < 200 ) {
+          
+          hitcounter = hitcounter -1;
+          enemy[i].x = 0;
+          enemy[i].y = 0;
+        }
+      }
 
    }
  }
