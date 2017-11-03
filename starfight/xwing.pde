@@ -22,9 +22,12 @@ class Xwing {
        translate(x,y);
        rotate(richtung);
        
-       // rect(0,0,4,20) ;
+//       rect(-10,-10,20,3);
        
-       rect(-10,-10,20,3);
+       quad(0,-5, -5,-10, 5,-10, 0,0);
+       quad(0, 5, -5, 10, 5, 10, 0,0);
+       
+       quad(-6,-2, 10,-1, 10,1, -6,2);
        
        popMatrix();
      }
@@ -41,6 +44,9 @@ class Xwing {
       for (int i=0; i < schuss.length; i++) {
         if ( dist(x,y,schuss[i].x,schuss[i].y) < 20 ) {
           wasHit = true;
+          hitcounter = hitcounter +1;
+          schuss[i].x = -100;
+          schuss[i].y = -100;
         }
       }
       
